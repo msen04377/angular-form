@@ -21,7 +21,8 @@
 <!-- Template Driven Form End -->
 
 <!-- start Reactive form -->
-<h1>Angular Reactive Form</h1>
+<div class="container my-3">
+  <h1>Angular Reactive Form</h1>
 
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div formGroupName="userDetail">
@@ -31,8 +32,15 @@
     <input type="password" name="password" formControlName="password"><br>
     <small class="text-danger"
     *ngIf="!loginForm.get('userDetail.password')?.valid && loginForm.get('userDetail.password')?.touched">please enter valid password</small><br><br>
-  </div>
-
+  </div> 
   <button type="submit">Login</button>
 </form>
+</div>
 <!-- end Reactive form -->
+
+
+
+<a routerLink="/add_form">
+  <button>Please Click on Form Add</button>
+</a>
+<router-outlet></router-outlet>
